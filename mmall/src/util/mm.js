@@ -8,7 +8,7 @@
 'use strict';
 var Hogan = require('hogan.js');
 var conf = {
-    serverHost : ''
+    serverHost : 'http://127.0.0.1:8080'
 };
 var _mm = {
     // 网络请求
@@ -19,6 +19,11 @@ var _mm = {
             url         : param.url     || '',
             dataType    : param.type    || 'json',
             data        : param.data    || '',
+            xhrFields :
+                {
+                    withCredentials : true
+                },
+            crossDomain : true,
             success     : function(res){
                 // 请求成功
                 if(0 === res.status){

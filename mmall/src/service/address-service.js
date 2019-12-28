@@ -23,6 +23,7 @@ var _address = {
     //新建收件人收货信息
     save: function(addressInfo,resolve, reject) {
         _util.request({
+            method:"post",
             url: _util.getServerUrl('/shipping/add.do'),
             data:addressInfo,
             success: resolve,
